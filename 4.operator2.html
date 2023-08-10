@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+    <style>
+        .bar {
+            width: 30px;
+            height: 100px;
+            background-color: palevioletred;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar"></div>
+
+    <script>
+        let bar = document.querySelector('.bar');
+        let barWidth = 30;
+
+        // Q. 클릭 할 때 마다 특정한(or 랜덤한) 색으로 변하게 만들어보기
+
+        let bgColor = ['aqua', 'cadetblue', 'rosybrown', 'palevioletred'];
+        bar.addEventListener('click', function() {
+            barWidth += 10;
+            bar.style.width = barWidth + 'px';
+
+            let index = Math.floor(Math.random() * bgColor.length);
+            bar.style.backgroundColor = bgColor[index];
+        });
+
+        // -------------------------------
+        let a = 2;
+            a = a + 2;  // 4
+            a = a + 2;  // 6
+            a += 2;     // 8
+            a += 2;     // 10
+
+            /*
+            [ 할당 연산자 ]
+            - a += i;
+            */
+
+        document.write(a);
+        console.log(a);
+    </script>
+</body>
+</html>
