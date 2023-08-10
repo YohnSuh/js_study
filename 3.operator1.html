@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        let b = 30;
+        let c = 10;
+        let d = 7;
+
+        console.log(a);
+        console.log(b);
+        document.write(a + b);
+
+        // 기본 5칙 연산자
+        console.log('더하기: ', a + b);
+        console.log('빼기: ', a - b);
+        console.log('곱하기: ', a * b);
+        console.log('나누기: ', a / b);
+        console.log('나머지: ', a % b);
+
+        document.write('<hr>');
+        document.write(b % d, '<br>');
+        document.write(b % c, '<br>');
+        document.write(100 % 7);
+
+        document.write('<hr>');
+        
+        let str1 = 'Hello';
+        let str2 = 'Guten Tag';
+        let str3 = '123';
+        let num1 = 123;
+
+        console.log(str3 == num1);
+        console.log(str3 === num1);
+
+        document.write(str3 + num1 + '<br>');
+        console.log('str3 + num1:', typeof(str3 + num1)); // String => 문자열과 다른 데이터를 더하면 무조건 문자열이 됨
+        document.write(str1 + ' ' + str2);
+
+        document.write('<hr>');
+
+        let x = 30;
+        let y = 24;
+
+        document.write(x + '와 ' + y + '를 더하면 ' + x + y + '가 됩니다.<br>');    // 문자열이 있으므로 3024 문자열이 된다.
+        document.write(x + '와 ' + y + '를 더하면 ' + (x + y) + '가 됩니다.<br>');  // 괄호를 먼저 연산함으로 54가 나온다.
+        document.write(x + y);
+
+        console.log(x + y);
+
+        document.write('<hr>');
+        
+        let s = 2;
+        let t = 14;
+
+        document.write(s + '와 ' + t + '를 곱하면 ' + s * t + '이 나옵니다.');
+
+        // ------------------------------------------------------------------------
+        document.write('<hr>');
+
+        let u = '버섯';
+        let v = '감자';
+        let w = 130;
+        let z = '27';
+
+        document.write(u - w); // NaN : Not a Number; 계산되지 못 함을 나타내는 숫자 데이터
+        document.write('<br>');
+        document.write(w - z); // 103; 문자열을 숫자형으로 형변환 후 연산
+        console.log('타입:', typeof(u) === typeof(z));
+        console.log('타입:', typeof(u) === typeof(w));
+        
+    </script>
+</body>
+</html>
