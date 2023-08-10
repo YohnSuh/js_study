@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입</title>
+</head>
+<body>
+    <script>
+        // 1. Number 숫자형 데이터
+        let num1 = 123;
+        let num2 = -333;
+        let num3 = 0.123;
+
+        console.log(num1, num2, num3);
+
+        // 2. String 문자열 데이터: 문자들을 '', ""를 사용하여 묶어준다.
+        //                         ('', "" 혼용하여 사용 가능)
+        let str1 = 'Hello World';
+        let str2 = 'hElL WoRlD';
+        let str3 = 'JavaScript';
+
+        console.log(str1);
+        console.log(str2);
+        console.log(str3);
+
+        document.write(str1);
+
+        // 3. Boolean 논리형 데이터: true/false만 존재
+        let bln1 = true;    // 참, 1, 값이 존재
+        let bln2 = false;   // 거짓, 0, 값이 존재 x
+
+        console.log(bln1);
+        console.log('str1은 str2와 같다? ', str1 == str2);
+
+        // 4. undefined, null 빈 데이터
+        let void1;        // 변수가 비어있음을 나타내는 데이터
+        let void2 = null; // 비어있음을 나타내며, 변수를 초기화 하기 위해 사용
+
+        console.log(void1);
+        console.log(void2);
+
+        document.write('<hr>'); // 문자열 데이터로 html 코드를 넣으면 html이 출력
+        
+        let a = '떴다 떳다 비행기';
+        let b = '날아라 날아라';
+        document.write(a + '\u00A0' + b); // \u00A0 == 공백
+    </script>
+</body>
+</html>
