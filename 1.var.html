@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+<body>
+    <script>
+        // alert('hello world');
+
+        /*
+        프로그래밍 언어의 정의
+        - 데이터를 다루는 언어; 데이터를 다루기 위해서는 데이터를 담아 둘 "그릇"이 필요 == "변수"
+        */
+
+        // let 변수 선언, 123을 a에 저장
+        // "="은 오른쪽에 있는 값을 왼쪽에 대입, 저장 == 대입연산자
+        let a = 123;
+        alert(a);
+        document.write(a);
+        // document.write(); html의 body에 데이터를 입력하는 명령어
+
+        let b = -333;
+        document.write('<br>', b);
+
+        /*
+        [ 변수 작명 규칙 ]
+        - 영어와 숫자로 작성
+        - 숫자로 시작 x
+        - 대소문자 구별; let redRose != let redrose
+        - 특수문자는 _와 $만 사용 가능; '-'는 마이너스 기호로 인식
+        */
+       
+        let c = 23; // c에 23 저장
+            c = 50; // c에 50을 저장
+            c = 77;
+        document.write('<br>', c);
+        // 하나의 변수에는 하나의 데이터만 저장
+        // js는 위에서부터 아래로 한 줄 씩 실행
+
+        c = 777;
+        console.log(c);
+    </script>
+</body>
+</html>
