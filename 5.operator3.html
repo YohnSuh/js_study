@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+        /*
+            [ 비교 연산자 ]
+            >, <, >=, <=, ...
+            반드시 true or false 중 하나만 가질 수 있음
+            즉, 연산된 결과값이 ture / false 만 나옴
+            
+            참/거짓은 일종의 데이터; 상태를 나타내는 형용사가 아님
+        */
+        let a = 30;
+        let b = 20;
+        let c = 20;
+
+        document.write(a > b);
+        console.log("b > = c:", b >= c);
+        console.log("a == 30:", a == 30);
+
+        let x = 123;
+        let y = "123";
+        
+        console.log("x == y:", x == y);     // 데이터의 값만 비교
+        console.log("x === y:", x === y);   // type까지 일치 하는지
+
+        console.log("x != y:", x != y);     // 데이터의 값만 비교
+        console.log("x !== y:", x !== y);   // 데이터의 형태까지 비교
+    </script>
+</body>
+</html>
