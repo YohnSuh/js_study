@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+        /*
+            [ 논리 연산자 ]
+            &&(and) : 단 하나의 false만 있어도 결과값이 false
+            ||(or)  : 단 하나의 true만 있어도 결과값이 true
+        */
+        // let gender = prompt('성별을 입력해주세요.');
+        // let local = prompt('사는 지역을 입력해주세요.');
+
+        // if(gender == '여자' && local == '부산') {
+        //     alert('채용되셨습니다.');
+        // } else {
+        //     alert('불합격입니다.');
+        // }
+
+        // let foot = prompt('발사이즈를 적어주세요');
+        // if(foot > 220 && foot < 260) {
+        //     alert('재고가 있습니다.');
+        // } else {
+        //     alert('재고가 없습니다.');
+        // }
+
+        // let gender2 = prompt('성별을 입력해주세요.');
+        // let local2 = prompt('사는 지역을 입력해주세요.');
+
+        // if(gender2 == '여자' || local2 == '부산') {
+        //     alert('합격입니다.');
+        // } else {
+        //     alert('불합격입니다.');
+        // }
+        
+        let height = prompt('키를 입력해주세요.');
+        if(height <= 150 || height >= 190) {
+            alert('탑승하실 수 없습니다.')
+        } else {
+            alert('탑승 가능합니다.');
+        }
+    </script>
+</body>
+</html>

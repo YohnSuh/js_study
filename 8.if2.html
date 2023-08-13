@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+    <style>
+        .box {
+            height: 100px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // let num = prompt('숫자를 입력해주세요.');
+        // if((num%2) == 0) {
+        //     alert('짝수입니다.');
+        // } else {
+        //     alert('홀수입니다.');
+        // }
+
+        // let age = prompt('나이를 입력해주세요.');
+        // if(age < 5 || age >= 70) {
+        //     alert('무료 이용 가능합니다.');
+        // } else {
+        //     alert('정상요금입니다.');
+        // }
+        
+        // let weight = prompt('강아지의 체중을 입력해주세요.');
+        // if(weight >= 3 && weight <= 10) {
+        //     alert('진료가능합니다.');
+        // } else {
+        //     alert('당일 진료 불가능합니다.');
+        // }
+
+        let width = prompt('너비를 입력해주세요.');
+        let box = document.querySelector('.box');
+        box.style.width = `${width}px`;
+        if(width > 100 && width < 200) {
+            box.style.backgroundColor = "red";
+        }
+
+        let age = prompt('나이를 적어주세요.');
+        let gender = prompt('성별을 적어주세요.');
+        if(age >= 20 && gender == '남자') {
+            alert('참가 가능합니다.');
+        } else {
+            alert('참가 불가능합니다.');
+        }
+    </script>
+</body>
+</html>
