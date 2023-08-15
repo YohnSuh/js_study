@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+</head>
+<body>
+    <script>
+        /*
+            if(비교식1) {
+                비교식1이 참일 때, 실행 될 코드
+            } else if(비교식2) {
+                비교식2가 참일 때, 실행 될 코드
+            } else {
+                그 어떤 비교식도 참이 아닐 때 실행될 코드
+            }
+        */
+        // let age = prompt('나이를 입력해주세요.');
+        // if(age > 3 && age < 12) {
+        //     alert('무료 입장입니다.');
+        // } else if(age >= 12 && age <= 18) {
+        //     alert('청소년 요금입니다.');
+        // } else if(age >= 19 && age <= 60) {
+        //     alert('정상요금 입니다.')
+        // } else {
+        //     alert('무료 입장입니다!');
+        // }
+        let height = prompt('키를 입력하세요.');
+        if(height <= 150) {
+            alert('탑승 불가능 합니다.');
+        } else if(height <= 190) {
+            alert('탑승 가능합니다.');
+        } else {
+            alert('안전 요원의 안내가 필요합니다.');
+        }
+    </script>
+</body>
+</html>
