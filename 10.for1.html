@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <script>
+        /*
+            [ 반복문 ]
+            for(초기값; 비교식; 증감식) {
+                실행구문;
+            }
+            - 초기값 -> [비교식 -> 실행구문 -> 증감식 -> 비교식 -> 실행구문 -> 증감식 -> 비교식 -> 실행구문 -> ...]
+        */
+        for(let i = 0; i < 10; i++) {
+            document.write('Hello World<br>');
+        }
+
+        // 초기값 14, 이름 12번 출력
+        for(let i = 14; i < 26; i++) {
+            document.write((i - 13) + ': yohnsuh<br>');
+        }
+
+        // 1 ~ 48까지의 수 중 짝수만 출력
+        for(let i = 1; i < 49; i++) {
+            if((i % 2) == 0) {
+                document.write(i + '<br>');
+            }
+        }
+
+        for(let i = 0; i < 49; i += 2) {
+            document.write(i + '<br>');
+        }
+
+        for(let i = 1; i < 25; i++) {
+            document.write((i * 2) + '<br>');
+        }
+
+        // 구구단 2단 출력
+        for(let i = 1; i < 10; i++) {
+            // document.write( '2 * ' + i + ' = ' + (i * 2) + '<br>');
+            document.write(`2 X ${i} = ${i * 2} <br>`);
+        }
+        let name = prompt('이름을 입력해주세요.');
+        alert(`${name}님, 반갑습니다.`);
+    </script>
+</body>
+</html>
