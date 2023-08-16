@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        /*
+            [ 배열 ]
+            - 여러개의 데이터를 하나의 리스트(데이터)화 시킨 것
+            - 배열은 순서형 리스트
+        */
+        let arr = ['딸기', '복숭아', '사과', '포도', '수박'];
+        document.write(arr[3] + '<br>'); // 포도
+        
+        for(let idx = 0; idx < arr.length; idx++) {
+            document.write(`${idx + 1}. ${arr[idx]} <br>`);
+        }
+
+        let flower = ['장미', '백합', '나리', '동백', '매화'];
+        for(let idx = 0; idx < flower.length; idx++) {
+            document.write(`${idx + 1}. ${flower[idx]} <br>`);
+        }
+    </script>
+</body>
+</html>
