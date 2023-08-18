@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <style>
+        .item1 {
+            width: 200px;
+            height: 200px;
+            background-color: seagreen;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1"></div>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        /*
+            jQuery는 jQuery 파일이 있어야 작동; script src를 사용하여 스크립트 상단에 연결; html 태그를 조작하기 위해 사용되는 라이브러리
+            $('선택자')로 시작
+        */
+        $('.item1').click(function() {
+            $('.item1').css({'background-color' : 'red'});
+        })
+    </script>
+</body>
+</html>
