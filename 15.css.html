@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            margin: 40px auto;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $('.item1').css({'background-color' : 'red'});
+        $('.item2').css({
+            'backgroundColor' : 'darkviolet'
+          , 'borderWidth' : '10px'
+        });
+        $('.item3').css({
+            'backgroundColor' : 'green'
+          , 'border' : '5px solid red'
+        });
+        $('.item4').css({
+            'fontSize' : '48px'
+          , 'textAlign' : 'left'
+          , 'fontWeight' : 'bold'
+        });
+        $('.item5').css({
+            'backgroundColor' : 'gold'
+          , 'width' : '300px'
+          , 'height' : '300px'
+          , 'lineHeight' : '300px'
+        });
+        $('.item6').css({
+            'backgroundColor' : 'pink'
+          , 'color' : 'red'
+          , 'fontSize' : '36px'
+        });
+        $('.item7').css({
+            'backgroundColor' : 'dodgerblue'
+          , 'fontSize' : '48px'
+          , 'textAlign' : 'right'
+          , 'fontWeight' : 'bold'
+        });
+        $('.item8').css({
+            'backgroundColor' : 'deeppink'
+          , 'width' : '400px'
+          , 'height' : '400px'
+          , 'lineHeight' : '400px'
+        });
+    </script>
+</body>
+</html>
