@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <style>
+        div {
+            width: 300px;
+            height:  300px;
+            border: 1px solid;
+            margin: 40px auto;
+            font-size: 100px;
+            text-align: center;
+            line-height: 300px;
+            transition: 1s;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        li {
+            width: 50px;
+            height: 50px;
+            background-color: turquoise;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!-- div.item$*8 -->
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $('li').click(function() {
+            // $('li').css({
+            //     'backgroundColor' : 'turquoise'
+            // });
+
+            $(this).css({
+                'backgroundColor' : 'dodgerblue'
+            });
+
+            $(this).siblings().css({
+                'backgroundColor' : 'turquoise'
+            });
+        });
+
+        $('.item1').click(function() {
+            $('.item1').css({
+                'backgroundColor' : 'gold'
+            });
+        });
+
+        $('.item2').click(function() {
+            $('.item2').css({
+                'backgroundColor' : 'pink'
+              , 'color' : 'red'
+            });
+            $('.item2').text('Hello');
+        });
+
+        $('.item3').click(function() {
+            $('.item3').css({
+                'backgroundColor' : 'red'
+              , 'color' : 'pink'
+            })
+        });
+
+        $('.item4').click(function() {
+            $('.item5').css({
+                'backgroundColor' : 'gold'
+            });
+            $(this).css({
+                'backgroundColor' : 'transparent'
+            })
+        });
+
+        $('.item5').click(function() {
+            $('.item4').css({
+                'backgroundColor' : 'gold'
+            });
+            $(this).css({
+                'backgroundColor' : 'transparent'
+            });
+        });
+
+        $('.item6').click(function() {
+            $('div').css({
+                'borderWidth' : '10px'
+            });
+        });
+
+        $('.item7').click(function(){
+            $(this).css({
+                'backgroundColor' : 'darkviolet'
+            });
+            $('div').css({
+                'borderWidth' : '1px'
+            });
+        });
+
+        $('.item8').click(function() {
+            $('body').css({
+                'backgroundColor' : 'powderblue'
+            });
+            $(this).css({
+                'backgroundColor' : 'blue'
+            });
+        })
+
+        $(window).scroll(function() {
+            let a = $(window).scrollTop();
+            $('div').css({
+                'backgroundColor' : 'pink'
+            });
+            if(a == 0) {
+                $('div').css({
+                'backgroundColor' : 'transparent'
+            }); 
+            }
+        });
+    </script>
+</body>
+</html>
