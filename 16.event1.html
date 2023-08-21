@@ -56,6 +56,7 @@
     <div class="item6">6</div>
     <div class="item7">7</div>
     <div class="item8">8</div>
+    <div class="item9">9</div>
 
     <script src="js/jquery-3.7.0.min.js"></script>
     <script>
@@ -127,6 +128,8 @@
             });
         });
 
+        let el = true;
+
         $('.item8').click(function() {
             $('body').css({
                 'backgroundColor' : 'powderblue'
@@ -134,6 +137,7 @@
             $(this).css({
                 'backgroundColor' : 'blue'
             });
+            console.log(el);
         })
 
         $(window).scroll(function() {
@@ -147,6 +151,33 @@
             }); 
             }
         });
+
+        //---------------------------------
+        let clicked = false;
+
+        $('.item9').click(function() {
+            if (!clicked) { // true일 때,
+                console.log(clicked); // false
+                $('body').css({
+                    'backgroundColor': 'powderblue'
+                });
+                $(this).css({
+                    'backgroundColor': 'blue'
+                });
+                clicked = true;
+                console.log(clicked); // true
+            } else { // false일 때,
+                console.log(clicked);
+                $('body').css({
+                    'backgroundColor': ''
+                });
+                $(this).css({
+                    'backgroundColor': ''
+                });
+                clicked = false;
+            }
+        });
+
     </script>
 </body>
 </html>
