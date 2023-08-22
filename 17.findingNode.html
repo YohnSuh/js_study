@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>node 찾기</title>
+    <style>
+        *:not(html, body) {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        </style>
+    
+</head>
+<body>
+    <div class="wrap">
+        div, .wrap
+        <div class="header">
+            div, .header
+            <h1>h1</h1>
+            <ul class="gnb">
+                ul, .gnb
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li class="apple">li, .apple</li>
+                <li>li</li>
+            </ul><!--gnb-->
+            <ul class="util">
+                ul, .util
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+            </ul><!--util-->
+        </div><!--header-->
+        <div class="content">
+            div, .content
+            <div class="con">
+                div, .con
+                <div class="row1">
+                    div, .row1
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">
+                            div, .pic
+                        </div><!--pic-->
+                        <div class="txt">
+                            div, .txt
+                            <p>p</p>
+                            <p>p</p>
+                            <p>p</p>
+                        </div><!--txt-->
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">
+                            div, .pic
+                        </div><!--pic-->
+                        <div class="txt">
+                            div, .txt
+                            <p>p</p>
+                            <p>p</p>
+                            <p>p</p>
+                        </div><!--txt-->
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">
+                            div, .pic
+                        </div><!--pic-->
+                        <div class="txt">
+                            div, .txt
+                            <p>p</p>
+                            <p>p</p>
+                            <p>p</p>
+                        </div><!--txt-->
+                    </div><!--item-->
+
+                </div><!--row1-->
+                <div class="row2">
+                    div, .row2
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                </div><!--row2-->
+            </div><!--con-->
+            <div class="main">
+                div, .main
+                <div class="space">
+                    div, .space
+                    <div class="bn">div, .bn</div>
+                    <div class="bn">div, .bn</div>
+                    <div class="bn">div, .bn</div>
+                </div><!--space-->
+                <div class="product">
+                    div, .product
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                </div><!--product-->
+            </div><!--main-->
+        </div><!--content-->
+        <div class="footer">
+            div, .footer
+            <h2>h2</h2>
+            <ul class="fInfo">
+                ul, .finfo
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+            </ul><!--finfo-->
+
+            <ul class="fmenu">
+                ul, .fmenu
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li class="select">li, .select</li>
+                <li>li</li>
+            </ul><!--fmenu-->
+            <address>
+                address
+                <p>p</p>
+                <p>p<span>span</span><span>span</span></p>
+                <p>p</p>
+            </address>
+        </div><!--footer-->
+    </div><!--wrap-->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        // 1. 자식찾기 - find(), children()
+        $('.gnb').children().css({
+            'borderColor' : 'black'
+        });
+        $('.gnb').children('.apple').css({
+            'background' : 'crimson'
+        });
+
+        // children: 바로 아래 자식만 선택; ()안 생략 가능
+        $('.content').children('div').css({
+            'borderColor' : 'steelblue'
+        });
+
+        // find: 내부의 모든 자손 중 대상자에 해당하는 것 찾기; ()안 대상 생략 불가
+        $('.content').find('div').css({
+            'borderColor' : 'pink'
+        });
+
+        $('.product').find('h4').css({
+            'backgroundColor' : 'pink'
+        });
+
+        $('.footer').children('.fInfo').children().css({
+            'borderColor' : 'limegreen'
+        });
+
+        $('.header').children('.util').children().css({
+            'borderColor' : 'darkviolet'
+        });
+
+        // 2. 순서로 찾기: eq(), first(), last()
+
+        // first는 첫 번째 요소 찾기
+        $('.fInfo').children().first().css({
+            'background' : 'orangered'
+        });
+
+        // last는 마지막 요소 찾기
+        $('.fInfo').children().last().css({
+            'background' : 'orange'
+        })
+        // eq(n): index 넘버로 찾기
+        $('.fInfo').children().eq(3).css({
+            'background' : 'gold'
+        });
+        $('.product').children().eq(1).children('h4').css({
+            'borderColor' : 'red'
+          , 'color' : 'red'
+        });
+        $('address').find('span').eq(1).css({
+            'background' : 'red'
+        ,   'color' : 'white'
+        });
+        $('.row2').children('.box').eq(2).children('p').eq(0).css({
+            'background' : 'limegreen'
+        ,   'color' : 'white'
+        });
+        $('.row1').children('.item').eq(1).find('p').eq(2).css({
+            'background' : 'gold'
+        });
+
+        // 3. 형제 찾기: prev(), next(). siblings()
+        
+        // 이전 형제 찾기
+        $('.select').prev().css({
+            'background' : 'limegreen'
+        });
+
+        // 다음 형제 찾기
+        $('.select').next().css({
+            'background' : 'crimson'
+        });
+
+        // 모든 형제 찾기; 자기 자신을 제외한 나머지 것들; siblings(), siblings('요소')
+        $('.select').siblings().css({
+            'borderColor' : 'black'
+        });
+        $('.apple').siblings().css({
+            'background' : 'pink'
+        });
+        $('.gnb').siblings('h1').css({
+            'border' : '2px solid black'
+        });
+        $('.util').children().click(function() {
+            $(this).css({
+                'background' : 'lavender'
+            });
+            $(this).siblings().css({
+                'background' : ''
+            });
+        });
+        $('h2').siblings('.fInfo').children().eq(1).css({
+            'background' : 'yellow'
+        });
+        $('.product').siblings('.space').children().eq(2).css({ // eq대신 last도 가능
+            'background' : 'orange'
+        });
+    </script>
+</body>
+</html>
