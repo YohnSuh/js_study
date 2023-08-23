@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>node 찾기2</title>
+    <style>
+        *:not(html, body) {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        </style>
+    
+</head>
+<body>
+    <div class="wrap">
+        div, .wrap
+        <div class="header">
+            div, .header
+            <h1>h1</h1>
+            <ul class="gnb">
+                ul, .gnb
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li class="apple">li, .apple</li>
+                <li>li</li>
+            </ul><!--gnb-->
+            <ul class="util">
+                ul, .util
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+            </ul><!--util-->
+        </div><!--header-->
+        <div class="content">
+            div, .content
+            <div class="con">
+                div, .con
+                <div class="row1">
+                    div, .row1
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">
+                            div, .pic
+                        </div><!--pic-->
+                        <div class="txt">
+                            div, .txt
+                            <p>p</p>
+                            <p>p</p>
+                            <p>p</p>
+                        </div><!--txt-->
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">
+                            div, .pic
+                        </div><!--pic-->
+                        <div class="txt">
+                            div, .txt
+                            <p>p</p>
+                            <p>p</p>
+                            <p>p</p>
+                        </div><!--txt-->
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">
+                            div, .pic
+                        </div><!--pic-->
+                        <div class="txt">
+                            div, .txt
+                            <p>p</p>
+                            <p>p</p>
+                            <p>p</p>
+                        </div><!--txt-->
+                    </div><!--item-->
+
+                </div><!--row1-->
+                <div class="row2">
+                    div, .row2
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                    <div class="box">
+                        div, .box
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--box-->
+
+                </div><!--row2-->
+            </div><!--con-->
+            <div class="main">
+                div, .main
+                <div class="space">
+                    div, .space
+                    <div class="bn">div, .bn</div>
+                    <div class="bn">div, .bn</div>
+                    <div class="bn">div, .bn</div>
+                </div><!--space-->
+                <div class="product">
+                    div, .product
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                    <div class="item">
+                        div, .item
+                        <div class="pic">div, .pic</div>
+                        <h4>h4</h4>
+                        <p>p</p>
+                        <p>p</p>
+                    </div><!--item-->
+
+                </div><!--product-->
+            </div><!--main-->
+        </div><!--content-->
+        <div class="footer">
+            div, .footer
+            <h2>h2</h2>
+            <ul class="fInfo">
+                ul, .finfo
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+            </ul><!--finfo-->
+
+            <ul class="fmenu">
+                ul, .fmenu
+                <li>li</li>
+                <li>li</li>
+                <li>li</li>
+                <li class="select">li, .select</li>
+                <li>li</li>
+            </ul><!--fmenu-->
+            <address>
+                address
+                <p>p</p>
+                <p>p<span>span</span><span>span</span></p>
+                <p>p</p>
+            </address>
+        </div><!--footer-->
+    </div><!--wrap-->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        // 4. 부모찾기 - parent(), parents()
+
+        // parent: 바로 위의 부모 선택
+        $('.select').parent().css({
+            'border' : '2px solid limegreen'
+        });
+
+        // parents: 모든 조상 찾기; parents('요소')는 모든 조상들 중 해당 조상 찾기
+        $('.select').parents('.wrap').css({
+            'border' : '2px solid lightpink'
+        });
+        $('.space').parent().prev().find('.item').eq(1).find('p').last().css({
+            'background' : 'orange'
+        });
+        $('.apple').parent().next().find('li').first().css({
+            'background' : 'pink'
+        });
+        $('.apple').parents('.header').next().find('.item').last().children('p').first().css({
+            'background' : 'red'
+        ,   'color' : 'white'
+        });
+    </script>
+</body>
+</html>
