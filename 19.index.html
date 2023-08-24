@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .list {
+            display: flex;
+            margin-top: 100px;
+            justify-content: center;
+        }
+        .list li {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: turquoise;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: .35s;
+        }
+        .con {
+            width: 80%;
+            margin: 100px auto 0;
+            display: flex;
+        }
+        .con .item {
+            width: 12.5%;
+            height: 50px;
+            margin-right: 5px;
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul><!--list-->
+    <div class="con">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div><!--con-->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $('.list li').click(function() {
+            $(this).css({
+                'background' : 'cornflowerblue'
+            });
+            $(this).siblings().css({
+                'background' : ''
+            });
+            let i = $(this).index(); // 대상의 index넘버 구하기
+            // console.log(i);
+
+            // 클릭 한 li와 순서가 일치하는 item의 높이를 100px로 바꾸기
+            let li = $(this).index();
+            $('.item').eq(li).css({
+                'height' : '100px'
+            });
+            $('.item').eq(li).siblings().css({
+                'height' : ''
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ui1.tabs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .tabs {
+            width: 1000px;
+            border: 10px solid;
+            padding: 5px;
+            margin: 80px auto 0;
+        }
+        .list {
+            display: flex;
+        }
+        .list li {
+            width: 20%;
+            text-align: center;
+            line-height: 40px;
+            border-right: 1px solid;
+            cursor: pointer;
+        }
+        .list li:last-child {
+            border: 0;
+        }
+        .list li:first-child {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+        .con {}
+        .con .item {
+            height: 500px;
+            display: none;
+        }
+        .con .item1 {
+            display: block;
+        }
+        .item1 {
+            background-color: red;
+        }
+        .item2 {
+            background-color: orange;
+        }
+        .item3 {
+            background-color: yellow;
+        }
+        .item4 {
+            background-color: limegreen;
+        }
+        .item5 {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <ul class="list">
+            <li>Red</li>
+            <li>Orange</li>
+            <li>yellow</li>
+            <li>limegreen</li>
+            <li>lightblue</li>
+        </ul><!--list-->
+        <div class="con">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+        </div><!--con-->
+    </div><!--tabs-->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $('.list > li').click(function() {
+            let index = $(this).index();
+
+            $(this).css({
+                'background' : 'black'
+            ,   'color' : 'white'
+            ,   'fontWeight' : 'bold'
+            });
+
+            $(this).siblings().css({
+                'background' : 'transparent'
+            ,   'color' : 'black'
+            ,   'fontWeight' : 'normal'
+            });
+
+            // $('.item').eq(index).css({
+            //     'display' : 'block'
+            // });
+            $('.item').eq(index).show();
+
+            // $('.item').eq(index).siblings().css({
+            //     'display' : 'none'
+            // });
+            $('.item').eq(index).siblings().hide();
+            
+            // display: block == show()
+            // display: none == hide()
+        });
+    </script>
+</body>
+</html>
