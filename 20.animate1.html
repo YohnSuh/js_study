@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        .item1 {
+            width: 200px;
+            height: 200px;
+            background-color: palevioletred;
+            margin: 0 auto;
+        }
+        .item2 {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        /*
+            jQuery에서 click(), animate()함수들을 메서드라고 함
+            animate() 메서드의 특징은 단순히 css값을 변경하는 데 있는 것이 아니라,
+            해당 애니메이트가 끝나고 난 다음 바로 일어날 일을 지정할 수 있는 것에 있음
+            $(대상).animate({변경될 값}, 걸리는 시간, function() {처음 애니메이트가 끝나고 일어날 일})
+            - 걸리는 시간: 1초 = 1000(밀리세컨)
+        */
+        $('.item1').click(function() {
+            $(this).animate({
+                'width' : '400px'
+            }, function() {
+                $('.item1').animate({
+                    'height' : '400px'
+                });
+            });
+        });
+        $('.item2').click(function() {
+            $(this).animate({
+                'width' : '500px'
+            }, 1000, function() {
+                $(this).animate({
+                    'height' : '500px'
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
