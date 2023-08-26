@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트2</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 40px auto;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+    <div class="item4"></div>
+    <div class="item5"></div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        // $('.item1').mouseover(function() {
+        //     $(this).css({
+        //         'background' : 'palevioletred'
+        //     });
+        // });
+        // $('.item1').mouseout(function() {
+        //     $(this).css({
+        //         'background' : 'powderblue'
+        //     });
+        // });
+        // ==
+        $('.item1').mouseover(function() {
+            $(this).css({
+                'background' : 'palevioletred'
+            }).mouseout(function() {
+                $(this).css({
+                    'background' : 'powderblue'
+                });
+            });
+        });
+        $('.item2').mouseover(function() {
+            $(this).css({
+                'width' : '400px'
+            }).mouseout(function() {
+                $(this).css({
+                    'height' : '400px'
+                });
+            });
+        });
+
+        $('.item3').mouseover(function() {
+            $(this).css({
+                'background' : 'red'
+            ,   'width' : '500px'
+            }).mouseout(function() {
+                $(this).css({
+                    'background' : 'gold'
+                ,   'height' : '500px'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
