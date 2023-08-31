@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>너비 높이</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .item1 {
+            width: 222px;
+            height: 333px;
+            background-color: red;
+        }
+        .item2 {
+            width: 333px;
+            height: 444px;
+            background-color: orangered;
+        }
+        .item3 {
+            width: 125px;
+            height: 300px;
+            background-color: orange;
+        }
+        .item4 {
+            width: 400px;
+            height: 250px;
+            background-color: gold;
+        }
+        .item5 {
+            width: 300px;
+            height: 500px;
+            background-color: yellow;
+        }
+        .item6 {
+            width: 400px;
+            height: 248px;
+            background-color: lime;
+        }
+        .item7 {
+            width: 180px;
+            height: 420px;
+            background-color: limegreen;
+        }
+        .item8 {
+            width: 380px;
+            height: 225px;
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+    <div class="item4"></div>
+    <div class="item5"></div>
+    <div class="item6"></div>
+    <div class="item7"></div>
+    <div class="item8"></div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        /*
+            $(대상자).width(숫자)   -> 대상의 너비를 숫자만큼으로 변경
+            $(대상자).width()       -> 대상의 너비를 구함
+        */
+        // $('.item1').width(500);     // 너비를 500으로 변경; px단위
+        // $('.item1').height(600);    // 높이를 600으로 변경; px단위
+
+        let item1Wid = $('.item1').width();
+        let item1hig = $('.item1').height();
+        console.log(item1Wid, item1hig);
+
+        $('div').click(function() {
+            let wid = $(this).width();
+            let hig = $(this).height();
+            $(this).width(hig);
+            $(this).height(wid);
+        });
+    </script>
+</body>
+</html>
