@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .con {
+            width: 800px;
+            margin: 40px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .item {
+            border-bottom: 1px solid #ddd;
+        }
+        .item h3 {
+            background-color: #eee;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .item .content {
+            display: none;
+            padding: 10px 10px 20px 10px;
+        }
+        .item h3:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+        .item h3.active {
+            background-color: navy;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="item">
+            <h3>1st Item</h3>
+            <div class="content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum explicabo officia iste, ipsa numquam ad vitae. Placeat laudantium perferendis at magnam, porro voluptate nam distinctio ullam esse sint! Rerum, hic!
+                Quae eius repellendus aliquid. Dicta praesentium doloribus, vitae eum impedit architecto laboriosam fugiat? Aperiam impedit dolorem nihil, et alias natus molestias adipisci officia debitis doloremque velit ea eos qui excepturi.
+            </div>
+        </div><!--item-->
+        <div class="item">
+            <h3>2nd Item</h3>
+            <div class="content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum explicabo officia iste, ipsa numquam ad vitae. Placeat laudantium perferendis at magnam, porro voluptate nam distinctio ullam esse sint! Rerum, hic!
+                Quae eius repellendus aliquid. Dicta praesentium doloribus, vitae eum impedit architecto laboriosam fugiat? Aperiam impedit dolorem nihil, et alias natus molestias adipisci officia debitis doloremque velit ea eos qui excepturi.
+            </div>
+        </div><!--item-->
+        <div class="item">
+            <h3>3rd Item</h3>
+            <div class="content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum explicabo officia iste, ipsa numquam ad vitae. Placeat laudantium perferendis at magnam, porro voluptate nam distinctio ullam esse sint! Rerum, hic!
+                Quae eius repellendus aliquid. Dicta praesentium doloribus, vitae eum impedit architecto laboriosam fugiat? Aperiam impedit dolorem nihil, et alias natus molestias adipisci officia debitis doloremque velit ea eos qui excepturi.
+            </div>
+        </div><!--item-->
+        <div class="item">
+            <h3>4th Item</h3>
+            <div class="content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum explicabo officia iste, ipsa numquam ad vitae. Placeat laudantium perferendis at magnam, porro voluptate nam distinctio ullam esse sint! Rerum, hic!
+                Quae eius repellendus aliquid. Dicta praesentium doloribus, vitae eum impedit architecto laboriosam fugiat? Aperiam impedit dolorem nihil, et alias natus molestias adipisci officia debitis doloremque velit ea eos qui excepturi.
+            </div>
+        </div><!--item-->
+        <div class="item">
+            <h3>5th Item</h3>
+            <div class="content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum explicabo officia iste, ipsa numquam ad vitae. Placeat laudantium perferendis at magnam, porro voluptate nam distinctio ullam esse sint! Rerum, hic!
+                Quae eius repellendus aliquid. Dicta praesentium doloribus, vitae eum impedit architecto laboriosam fugiat? Aperiam impedit dolorem nihil, et alias natus molestias adipisci officia debitis doloremque velit ea eos qui excepturi.
+            </div>
+        </div><!--item-->
+    </div><!--con-->
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $('h3').click(function() {
+            // 모든 h3에 removeClass, slideup()을 먼저 넣는 방법도 있음; toggle일 때는 사용불가
+            $(this).toggleClass('active');
+            $(this).next().stop().slideToggle(); // stop()붙이는거 까먹지 않기
+            $(this).parent().siblings().find('h3').removeClass('active');
+            $(this).parent().siblings().find('.content').stop().slideUp();
+        });
+    </script>
+</body>
+</html>
