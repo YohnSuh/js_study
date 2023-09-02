@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤2</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .round {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: fixed;
+            top: 100px;
+            right: 100px;
+            font-size: 20px;
+            background-color: palevioletred;
+            text-align: center;
+            line-height: 200px;
+        }
+        .pager {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+        .pager li {
+            font-size: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        body {
+            height: 7000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="round">0</div>
+    <ul class="pager">
+        <li>page1</li>
+        <li>page2</li>
+        <li>page3</li>
+        <li>page4</li>
+        <li>page5</li>
+        <li>page6</li>
+    </ul>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(window).scroll(function() {
+            let scr = $(window).scrollTop();
+            $('.round').text(scr);
+            if(scr < 1000) {
+                $('body').css({
+                    'background' : 'transparent'
+                });
+            } else if(scr < 2000) {
+                $('body').css({
+                    'background' : 'deeppink'
+                });
+            } else if(scr < 3000) {
+                $('body').css({
+                    'background' : 'dodgerblue'
+                });
+            } else if(scr < 4000) {
+                $('body').css({
+                    'background' : 'limegreen'
+                });
+            } else if(scr < 5000) {
+                $('body').css({
+                    'background' : 'gold'
+                });
+            } else if(scr < 6000) {
+                $('body').css({
+                    'background' : 'orangered'
+                });
+            } else {
+                $('body').css({
+                    'background' : 'darkviolet'
+                });
+            }
+        });
+        
+        $('li').click(function() {
+            let idx = $(this).index();
+            console.log(idx);
+            $('html, body').stop().animate({
+                'scrollTop' : (idx + 1)*1000 + 'px'
+            });
+        });
+    </script>
+</body>
+</html>

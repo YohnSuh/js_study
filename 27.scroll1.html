@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤1</title>
+    <style>
+        .round {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            position: fixed;
+            top: 50px;
+            right: 40px;
+        }
+        body {
+            height: 30000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="round"> 0 </div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        // window: 브라우저; 따옴표 없이 사용
+        let scr = $(window).scrollTop();
+        $('.round').text(scr); // 마우스 휠을 돌릴 때마다 스크롤 위치값을 구한 다음, 구한 값을 round에 출력해야 함
+        $(window).scroll(function() {
+            let scr2 = $(window).scrollTop();
+            $('.round').text(scr2);
+
+            if(scr2 >= 10000) {
+                $('body').css({
+                    'background' : 'gold'
+                });
+            } else {
+                $('body').css({
+                    'background' : 'transparent'
+                });
+            }
+        });
+
+        /*
+            scroll 애니메이션 다루기
+            - $('html, body').animate({'scrollTop' : '위치값'});
+            - 반드시 대상이 html, body 여야 함
+        */
+        $('.round').click(function() {
+            $('html, body').animate({
+                'scrollTop' : '0'
+            });
+        });
+        
+    </script>
+</body>
+</html>
