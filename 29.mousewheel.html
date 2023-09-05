@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스휠</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .s1 {
+            height: 100vh;
+            background-color: pink;
+            font-size: 80px;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="s1">
+        <p>마우스 휠을 움직여 주세요.</p>
+    </section>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/plugin/jquery.mousewheel.min.js"></script>
+    <script>
+        // mousewheel() 이벤트는 플러그인을 설치 후에 사용가능
+        $('.s1').mousewheel(function(e, d) {
+            if(d > 0) {
+                // 마우스 휠을 올렸을 때,
+                $('p').text('마우스 휠을 올렸습니다.');
+                $('.s1').css({'background' : 'powderblue'});
+            } else if(d < 0) {
+                // 마우스 휠을 내렸을 때,
+                $('p').text('마우스 휠을 내렸습니다');
+                $('.s1').css({'background' : 'lightpink'});
+            }
+        });
+        /*
+            mousewheel() 이벤트는 mousewheel.js파일에서 가져온 메서드로
+            플러그인 제작자가 설정해둔 공식을 따라 작성해야 한다.
+            [ 공식 ]
+            $(el).mousewheel(function(e, d) {
+                if(d < 0) { 마우스휠을 내렸을 때 }
+                else if(d > 0) { 마우스휠을 올렸을 때 }
+            });
+        */
+    </script>
+</body>
+</html>
