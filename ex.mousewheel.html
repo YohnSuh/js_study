@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스휠 예제</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .s1 {
+            height: 100vh;
+            background-color: rgb(248, 167, 167);
+            position: relative;
+        }
+        .round {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(206, 68, 93);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -150px;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <section class="s1">
+        <div class="round"></div>
+    </section><!--s1-->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/plugin/jquery.mousewheel.min.js"></script>
+    <script>
+        $('.s1').mousewheel(function(e, d) {
+            if(d < 0) {
+                $('.round').css({'top' : '500px'});
+            } else if(d > 0) {
+                $('.round').css({'top' : '0'});
+            }
+        });
+    </script>
+</body>
+</html>
