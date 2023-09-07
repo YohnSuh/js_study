@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 제어</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .con section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* vh: viewport height; viewport는 기기, 브라우저를 뜻함; 보고 있는 창의 높이값만큼 상대값으로 요소에게 부여*/
+        }
+        .s1 {
+            background-color: tomato;
+        }
+        .s2 {
+            background-color: cornflowerblue;
+        }
+        .s3 {
+            background-color: lightpink;
+        }
+        .s4 {
+            background-color: lightblue;
+        }
+        .s5 {
+            background-color: palegoldenrod;
+        }
+        h2 {
+            font-size: 120px;
+            font-family: Arial;
+            font-weight: 900;
+            text-align: center;
+        }
+        .pager {
+            font-weight: bold;
+            font-family: arial;
+            position: fixed;
+            top: 50%;
+            margin-top: -100px;
+            right: 40px;
+            text-align: right;
+        }
+        .pager li {
+            margin-bottom: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .pager li:after {
+            content: '💕';
+        }
+        .pager li.active {
+            background-color: black;
+            color: white;
+            text-indent: 20px;
+        }
+        .pager li.active::after {
+            content: '💖';
+        }
+    </style>
+</head>
+<body>
+    <ul class="pager">
+        <li>TOMATO</li>
+        <li>CORNFLOWERBLUE</li>
+        <li>LIGHTPINK</li>
+        <li>LIGHTBLUE</li>
+        <li>PALEGOLDENROD</li>
+    </ul><!--pager-->
+    <div class="con">
+        <section class="s1">
+            <h2>TOMATO</h2>
+        </section><!--s1-->
+
+        <section class="s2">
+            <h2>CORNFLOWERBLUE</h2>
+        </section><!--s2-->
+
+        <section class="s3">
+            <h2>LIGHTPINK</h2>
+        </section><!--s3-->
+
+        <section class="s4">
+            <h2>LIGHTBLUE</h2>
+        </section><!--s4-->
+
+        <section class="s5">
+            <h2>PALEGOLDENROD</h2>
+        </section><!--s5-->
+    </div><!--con-->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/plugin/jquery.mousewheel.min.js"></script>
+    <script>
+        $('li').click(function() {
+            let idx = $(this).index();
+            let top = $('section').eq(idx).offset().top;
+            $('html, body').stop().animate({
+                'scrollTop' : top + 'px'
+            });
+
+            // 방법2
+            // let height = $(window).height();
+            // let idx = $(this).index();
+            // console.log(height, idx, (height * idx));
+            // $('html, body').stop().animate({
+            //     'scrollTop' : (height * idx)
+            // });
+        });
+
+        
+        $(window).scroll(function() {
+            let wnd = $(window).scrollTop();
+            let s2 = $('.s2').offset().top;
+            let s3 = $('.s3').offset().top;
+            let s4 = $('.s4').offset().top;
+            let s5 = $('.s5').offset().top;
+
+            if(wnd >= 0 && wnd < s2) {
+                $('li').eq(0).addClass('active');
+                $('li').eq(0).siblings().removeClass('active');
+            } else if(wnd < s3) {
+                $('li').eq(1).addClass('active');
+                $('li').eq(1).siblings().removeClass('active');
+            } else if(wnd < s4) {
+                $('li').removeClass('active');
+                $('li').eq(2).addClass('active');
+            } else if(wnd < s5) {
+                $('li').removeClass('active');
+                $('li').eq(3).addClass('active');
+            } else {
+                $('li').removeClass('active');
+                $('li').eq(4).addClass('active');
+            }
+        });
+
+        $('section').mousewheel(function(e, d) {
+            if(d < 0) {
+                let next = $(this).next().offset().top;
+                console.log(next);
+                $('html, body').stop().animate({
+                    'scrollTop' : next + 'px'
+                });
+            } else if(d > 0) {
+                let prev = $(this).prev().offset().top;
+                $('html, body').stop().animate({
+                    'scrollTop' : prev
+                });
+            }
+        });
+    </script>
+</body>
+</html>
