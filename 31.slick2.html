@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slick2</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        ul {list-style: none;}
+        a {color: inherit; text-decoration: none;}
+
+        .slide {position: relative;}
+        .con {position: relative;}
+        .con .item {height: 500px;}
+        .con .item1 {background-color: steelblue;}
+        .con .item2 {background-color: palevioletred;}
+        .con .item3 {background-color: slateblue;}
+        .con .item4 {background-color: lightcoral;}
+
+        /* .con > button {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 2555,255, .3);
+            border: 2px solid white;
+            color: white;
+            font-weight: bold;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            line-height: 30px;
+        }
+        .con .slick-prev {left: 50px;z-index: 999;}
+        .con .slick-next {right: 50px;z-index: 999;} */
+
+        .myPrev, .myNext {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, .6);
+            border: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .myPrev {left: 30px;}
+        .myNext {right: 30px;}
+        .myPrev span, .myNext span {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-left: 3px solid white;
+            border-bottom: 3px solid white;
+        }
+        .myPrev span {
+            transform: rotate(45deg);
+            margin: 0 auto;
+        }
+        .myNext span {
+            transform: rotate(-135deg);
+            margin: 0 auto;
+        }
+
+        .con .slick-dots {
+            display: flex;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .con .slick-dots li {
+            margin: 0 5px;
+        }
+        .con .slick-dots li button {
+            border: 0;
+            background-color: rgba(0, 0, 0, .4);
+            width: 30px;
+            height: 5px;
+            /* border-radius: 50%; */
+            text-indent: -9999px; /* 글자 제거 */
+        }
+        .con .slick-dots li.slick-active button {
+            background-color: rgba(255, 255, 255, .4);
+        }
+    </style>
+    <link rel="stylesheet" href="css/slick.css">
+</head>
+<body>
+    <div class="slide">
+        <div class="con">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+        </div><!--con-->
+        <button class="myPrev"><span></span></button>
+        <button class="myNext"><span></span></button>
+    </div><!--slide-->
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/plugin/slick.min.js"></script>
+    <script>
+        /*
+            화살표는 직접 만든 것에 연결이 간단
+            페이저버튼은 커스텀 버튼과 연결하는 것보다 내장 된 페이저 버튼을 꺼낸후 커스텀하는 것이 간단
+            <ul class="slick-dots">
+                <li><button></button></li>
+                <li><button></button></li>
+                <li><button></button></li>
+            </ul>
+            css상에서 꾸밀 때, li를 정렬하고 button의 모양을 잡아준다.
+            활성화 된 버튼의 모양을 지정할 때는
+            .slick-dots li.slick-active button {}
+            의 모양을 바꿔주면 된다.
+        */
+        $('.con').slick({
+            // 커스텀버튼으로 변경; 화살표 + 페이저버튼 = 인디케이터
+            'nextArrow' : '.myNext'
+        ,   'prevArrow' : '.myPrev'
+        ,   'dots' : true // pagerButton 소환
+        });
+        
+    </script>
+</body>
+</html>
