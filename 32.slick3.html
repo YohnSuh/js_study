@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀</title>
+    <style>
+        * {margin: 0;padding:0;}
+        .con {}
+        .con .item {
+            height: 300px;
+            border: 10px solid #000;
+            background-color: #eee;
+            font-size: 80px;
+            font-family: impact;
+            text-align: center;
+            line-height: 300px;
+            margin: 0 20px;
+        }
+
+        .wrap {margin-top: 100px; position: relative;}
+        .color {
+            width: 500px;
+        }
+        .color .item {height: 350px;}
+        .color .item1 {background-color: deeppink;}
+        .color .item2 {background-color: dodgerblue;}
+        .color .item3 {background-color: gold;}
+        .color .item4 {background-color: darkviolet;}
+        .color .item5 {background-color: limegreen;}
+
+        .txt {
+            width: 350px;
+            border: 10px solid #000;
+        }
+        .txt .item {
+            height: 200px;
+            line-height: 200px;
+            font-size: 50px;
+            font-family: impact;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="css/slick.css">
+</head>
+<body>
+    <div class="con">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div><!--con-->
+    <div class="wrap">
+        <div class="color">
+            <div class="item item1"></div>
+            <div class="item item2"></div>
+            <div class="item item3"></div>
+            <div class="item item4"></div>
+            <div class="item item5"></div>
+        </div><!--color-->
+        <div class="txt">
+            <div class="item">DEEPPINK</div>
+            <div class="item">DODGERBLUE</div>
+            <div class="item">GOLD</div>
+            <div class="item">DARKVIOLET</div>
+            <div class="item">LIMEGREEN</div>
+        </div><!--txt-->
+    </div><!--wrap-->
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/plugin/slick.min.js"></script>
+    <script>
+        $('.con').slick({ 
+            'slidesToShow' : 5      // 멀티 아이템 슬라이드 만들기; 캐러셀
+        ,   'slidesToScroll' : 2    // 한 번에 몇 개씩 움직일지 정하기
+        });
+
+        $('.color').slick({
+            'asNavFor' : '.txt'     // 여러개의 슬라이드를 함께 돌리기; 짝이 될 슬라이드에게도 적용한다.
+        ,   'fade' : true           // 페이드 모드
+        ,   'autoplay' :  true      // 자동 재생
+        ,   'autoplaySpeed' : 6000  // 자동 재생 속도; 1초 == 1000
+        });
+        $('.txt').slick({
+            'asNavFor' : '.color'
+        });
+    </script>
+</body>
+</html>
