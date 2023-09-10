@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mousemove</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        .con {
+            width: 600px;
+            height: 600px;
+            background-color: limegreen;
+            margin: 0 auto;
+        }
+        section {
+            background-color: palegoldenrod;
+            height: 100vh;
+            position: relative;
+        }
+        .round {
+            width: 300px;
+            height: 300px;
+            background-color: palevioletred;
+            position: absolute;
+            top: 200px;
+            left: 500px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="round"></div>
+    </section>
+    <div class="con"></div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $('.con').mousemove(function(e) { // function()안에 매개변수를 넣으면 해당 매개변수를 통해, 이벤트 도중에 일어나는 일에 접근할 수 있다.
+            let x = e.offsetX;  // 마우스 포지션 값 x축
+            let y = e.offsetY;  // 마우스 포지션 값 y축
+
+            $('.con').text(`${x}, ${y}`);
+        });
+
+        $('section').mousemove(function(e) {
+            let x = e.pageX;    // 브라우저 창 내에서 포지션 값 x축
+            let y = e.pageY;    // 브라우저 창 내에서 포지션 값 y축
+            $('.round').css({
+                'top' : 200 - (y / 18)
+            ,   'left' : 500 + (x / 20)
+            });
+        });
+    </script>
+</body>
+</html>
