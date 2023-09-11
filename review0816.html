@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습0816</title>
+</head>
+<body>
+    <script>
+        let song = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+        for(let i = 0; i < song.length; i++) {
+            if(i == 2) {
+                document.write(`8. ${song[i]}<br>`);
+            } else {
+                document.write(`${i + 1}. ${song[i]}<br>`);
+            }
+        }
+        // 방법 2
+        for(let i = 0; i < song.length; i++) {
+            let num = i;
+            if(i == 2) {
+                num = 7;
+            }
+            document.write(`${num + 1}. ${song[i]}<br>`);
+        }
+
+        let age = prompt('나이를 입력하세요.');
+        let res;
+        if(age < 8) {
+            res = '무료';
+        } else if(age < 20) {
+            res = '5000원';
+        } else if(age < 61) {
+            res = '12000원';
+        } else {
+            res = '4000원';
+        }
+        alert(`입장료는 ${res} 입니다.`);
+    </script>
+</body>
+</html>
