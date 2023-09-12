@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습0823</title>
+    <style>
+        .item {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 2px;
+            background-color: aquamarine;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        // $('.item').click(function() {
+        //     $(this).css({
+        //         'width' : '100px'
+        //     ,   'background' : 'dodgerblue'
+        //     });
+        //     $(this).siblings().css({
+        //         'width' : ''
+        //     ,   'background' : ''
+        //     });
+        // });
+        
+        // 클릭 한 요소만 너비가 넓어지게끔
+        // 첫 번째는 100px ~ 여덟 번째는 800px
+        $('.item').click(function() {
+            let index = $(this).index();
+            $(this).css({
+                'width' : (index + 1)*100 + 'px'
+            });
+            $(this).siblings().css({
+                'width' : ''
+            });
+        });
+    </script>
+</body>
+</html>
