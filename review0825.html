@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습0825</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .btnSet {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+        .btnSet button {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 0;
+            text-align: center;
+            background-color: palegreen;
+            margin-bottom: 5px;
+        }
+        .con .item {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="btnSet">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div><!--btnSet-->
+
+    <div class="con">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div><!--con-->
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $('.btnSet > button').click(function() {
+            let index = $(this).index();
+            $(this).css({
+                'background' : 'palevioletred'
+            });
+            $(this).siblings().css({
+                'background' : 'palegreen'
+            });
+            $('.item').eq(index).animate({
+                'width' : '300px'
+            }, function(){
+                $(this).animate({
+                    'height' : '300px'
+                })
+            });
+            $('.item').eq(index).siblings().animate({
+                'width' : '100px'
+            ,   'height' : '100px'
+            });
+        })
+    </script>
+</body>
+</html>
